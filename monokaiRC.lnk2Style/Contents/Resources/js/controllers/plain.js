@@ -413,3 +413,11 @@ function configureStyle() {
 function hideConnectionHintBox() {
     canAppendMessage = true;
 }
+
+function addBreak() {
+	$('#content').append('<hr noshade />');
+}
+
+function removeLastBreak(){
+	$('hr:last').remove();
+}
