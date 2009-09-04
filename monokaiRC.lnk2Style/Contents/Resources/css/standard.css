@@ -12,7 +12,7 @@
 }
 
 body {
-	background-color: #262821;
+	background-color: #272822;
 	color: #C2C4C9;
 	font-style: normal;
 	font-family: "Bitstream Vera Mono";
@@ -23,8 +23,12 @@ p {
 	font-style: normal;
 	margin:0px;
 	padding:0px;
-	margin-left: 50px;
+	padding-left: 50px;
 	text-indent: -50px;
+}
+
+p.highlighted {
+  background-color: #49483E;
 }
 
 a, a:visited, a:active {
@@ -100,4 +104,6 @@ div#content.has-title {
 }
 
 span.timestamp {color: #ff0066;}
-span.nick {color: #8ee91f;}
+span.incoming {color: #8ee91f;}
+span.outgoing {color: #8ee91f; font-weight: bold;}
+span.highlighted {color: #E6DB74; font-weight: bold;}
