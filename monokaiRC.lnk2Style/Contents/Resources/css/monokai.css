@@ -1,0 +1,61 @@
+@font-face {
+  font-family: "Bitstream Vera Mono";
+  font-style: normal;
+  src: url(../font/VeraMono.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Bitstream Vera Mono";
+  font-weight: bold;
+  font-style: normal;
+  src: url(../font/VeraMoBd.ttf) format("truetype");
+}
+
+body {
+	background-color: #272822;
+	color: #C2C4C9;
+	font-family: "Bitstream Vera Mono";
+}
+
+p.highlighted {
+  background-color: #49483E;
+}
+
+p.spotlight {
+  background-color: #3E3D32;
+}
+
+a, a:visited, a:active {
+	color:#fff;
+}
+		
+div#topic {
+  background-color: #49483E;
+}
+
+div#topic span#topicText {
+	color: #fff;
+  text-shadow: 0 -1px 0 #000;
+}
+
+div#topic a, a:visited, a:active {
+	color: #BFC0C1;
+}
+
+span.timestamp {
+  color: #ff0066;
+}
+
+span.incoming {
+  color: #8ee91f;
+}
+
+span.outgoing {
+  color: #8ee91f;
+  font-weight: bold;
+}
+
+span.highlighted {
+  color: #E6DB74;
+  font-weight: bold;
+}

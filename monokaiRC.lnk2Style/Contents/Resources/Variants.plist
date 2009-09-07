@@ -3,10 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>LKDefaultVariant</key>
-	<string>Standard</string>
+	<string>Monokai</string>
 	<key>LKVariants</key>
 	<array>
-		<string>Standard</string>
+		<string>Monokai</string>
+		<string>Twilight</string>
 	</array>
 </dict>
 </plist>
