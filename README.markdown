@@ -1,8 +1,6 @@
-# monokaiRC #
+# monokaiRC - A [Linkinus 2.0](http://conceitedsoftware.com/products/linkinus) style - irssi-like with a [monokai](http://www.monokai.nl/blog/2006/07/15/textmate-color-theme/) colour scheme #
 
-## A [Linkinus 2.0](http://conceitedsoftware.com/products/linkinus) style - irssi-like with a [monokai](http://www.monokai.nl/blog/2006/07/15/textmate-color-theme/) colour scheme ##
-
-### Installation ###
+## Installation ##
 
 Installation requires git to be installed.
 
@@ -18,11 +16,11 @@ To install this style:
     
 ### Credits ###
  
-Created by Cale Woodley on 2009-09-03.
+Created by [Cale Woodley](http://cobalt343.com) on 2009-09-03.
 
-Original Monokai theme for TextMate: http://www.monokai.nl/blog/2006/07/15/textmate-color-theme/
+Original Monokai theme for TextMate: [http://www.monokai.nl/blog/2006/07/15/textmate-color-theme/](http://www.monokai.nl/blog/2006/07/15/textmate-color-theme/)
 
-Linkinus theme based off I Are Sea by Nicholas Penree - http://conceitedsoftware.com/
+Linkinus theme based off I Are Sea by Nicholas Penree - [http://conceitedsoftware.com/](http://conceitedsoftware.com/)
 
 ## Screenshot ##
 
