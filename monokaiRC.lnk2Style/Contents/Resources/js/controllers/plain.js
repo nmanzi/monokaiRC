@@ -73,38 +73,30 @@ function appendMessage(messageDetails) {
     case 'msgMessage':
         if (isOutgoing) {
             spanclass = 'outgoing'
-            test = '$nickname';
         } else {
             if (type == 'query') {
                 document.getElementById('topicText').innerText = messageDetails[USERHOST_KEY];
-                test = '$nickname';
-            } else {
-                test = '$nickname';
             }
 
             if (isHighlighted) {
                 spanclass = 'highlighted'
-                test = '$nickname';
             }
         }
-        output = '<span class="timestamp">$time</span> <span style="color:#FFFFFF;font-weight:bold">&lt;</span><span class="' + spanclass + '">' + test + '</span><span style="color:#FFFFFF;font-weight:bold">&gt;</span> $description';
+        output = '<span class="timestamp">$time</span> <span style="color:#FFFFFF;font-weight:bold">&lt;</span><span class="' + spanclass + '">$nickname</span><span style="color:#FFFFFF;font-weight:bold">&gt;</span> $description';
         break;
     case 'msgAction':
         if (isOutgoing) {
-            test = '<span style="font-weight:bold">$nickname</span>';
+            spanclass = 'outgoing';
         } else {
             if (type == 'query') {
                 document.getElementById('topicText').innerText = messageDetails[USERHOST_KEY];
-                test = '<span style="color:#E13426;font-weight:bold">$nickname</span>';
-            } else {
-                test = '<span style="font-weight:bold">$nickname</span>';
             }
 
             if (isHighlighted) {
-                test = '<span style="color:#E1D127;font-weight:bold">$nickname</span>';
+                spanclass = 'highlighted'
             }
         }
-        output = '<span class="timestamp">$time</span> * ' + test + ' $description';
+        output = '<span class="timestamp">$time</span> * <span class="' + spanclass + '">$nickname</span> $description';
         break;
     case 'msgRaw':
         output = '<span class="timestamp">$time</span> <span style="color:#23dbef;font-weight:bold">-</span><span style="color:#fff;font-weight:bold">!</span><span style="color:#23dbef;font-weight:bold">-</span> $description';
@@ -113,7 +105,7 @@ function appendMessage(messageDetails) {
         test = messageDetails[USERHOST_KEY];
 
         if (test == '') {
-            test = '$nickname@hostname.unavailable';
+            test = '$nickname';
         }
         output = '<span class="timestamp">$time</span> <span style="color:#23dbef;font-weight:bold">-</span><span style="color:#fff;font-weight:bold">!</span><span style="color:#23dbef;font-weight:bold">-</span> <span style="color:#23dbef;font-weight:bold">$nickname</span> <span style="color:#726E5C">[</span><span style="color:#23dbef">' + test + '</span><span style="color:#726E5C">]</span> has joined <span style="font-weight:bold">' + messageDetails[LOCATION_KEY] + '</span>';
         break;
@@ -127,7 +119,6 @@ function appendMessage(messageDetails) {
         output = '<span class="timestamp">$time</span> <span style="color:#23dbef;font-weight:bold">-</span><span style="color:#fff;font-weight:bold">!</span><span style="color:#23dbef;font-weight:bold">-</span> <span style="color:#23dbef;">$recipient</span> was kicked from <span style="color:#fff;font-weight:bold">' + messageDetails[LOCATION_KEY] + '</span> by <span style="color:#fff;font-weight:bold">$nickname</span> <span style="color:#726E5C">[</span><span style="color:#fff">$description</span><span style="color:#726E5C">]</span>';
         break;
     case 'msgModeChange':
-
         if (messageDetails[LOCATION_KEY][0] == '#') {
             output = '<span class="timestamp">$time</span> <span style="color:#23dbef;font-weight:bold">-</span><span style="color:#fff;font-weight:bold">!</span><span style="color:#23dbef;font-weight:bold">-</span> mode/<span style="color:#23dbef">' + messageDetails[LOCATION_KEY] + '</span> <span style="color:#726E5C">[</span>$description<span style="color:#726E5C">]</span> by <span style="color:#fff;font-weight:bold">$nickname</span>';
         } else {
@@ -288,17 +279,8 @@ function scrollTo(id) {
 function spotlightUserMessagesFor(nick) {
     if (spotlightUserMessagesOnHoverEnabled) {
         $('p[nickname=' + nick + ']').each(function(i) {
-
-            lastBGColor = $(this).css('color');
-
-            $(this.children).each(function(i) {
-                if ($(this).attr('starred') != 'true') {
-                    $(this).css('color', '#726E5C');
-                }
-            });
-
             if ($(this).attr('starred') != 'true') {
-                $(this).css('color', '#726E5C');
+                $(this).addClass('spotlight');
             }
         });
     }
@@ -307,11 +289,7 @@ function spotlightUserMessagesFor(nick) {
 function unSpotlightUserMessagesFor(nick) {
     if (spotlightUserMessagesOnHoverEnabled) {
         $('p[nickname=' + nick + ']').each(function(i) {
-            $(this.children).each(function(i) {
-                $(this).css('color', lastBGColor);
-            });
-            $(this).css('color', lastBGColor);
-
+            $(this).removeClass('spotlight');
         });
     }
 }
