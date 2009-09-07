@@ -12,9 +12,9 @@
 }
 
 body {
-	background-color: #272822;
-	color: #C2C4C9;
-	font-family: "Bitstream Vera Mono";
+  background-color: #272822;
+  color: #C2C4C9;
+  font-family: "Bitstream Vera Mono";
 }
 
 p.highlighted {
@@ -26,7 +26,7 @@ p.spotlight {
 }
 
 a, a:visited, a:active {
-	color:#fff;
+  color: #fff;
 }
 		
 div#topic {
@@ -34,12 +34,12 @@ div#topic {
 }
 
 div#topic span#topicText {
-	color: #fff;
+  color: #fff;
   text-shadow: 0 -1px 0 #000;
 }
 
 div#topic a, a:visited, a:active {
-	color: #BFC0C1;
+  color: #BFC0C1;
 }
 
 span.timestamp {
